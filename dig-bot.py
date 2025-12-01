@@ -5,13 +5,14 @@ import time
 def bot_start():
     print("Bot QTE por Cor de Pixel Iniciado! Velocidade máxima.")
     pyautogui.FAILSAFE = True
+    time.sleep(5)
     
+    # 'right' para minerar para direita, 'left' para esquerda, 'up' para cima, 'down' para baixo
     while True:
         pyautogui.press('right')
         pyautogui.press('z')
         pyautogui.press('p')
         pyautogui.press('enter')
-        time.sleep(0.002)
         
 if __name__ == "__main__":
     try:
