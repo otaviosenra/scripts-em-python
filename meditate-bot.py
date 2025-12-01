@@ -3,9 +3,13 @@ import time
 from collections import namedtuple
 
 # Use o valor RGB exato que você encontrou na seta azul
+
 COR_AZUL_SETA = (65, 0, 144) # Exemplo: Ajuste este valor!
-TOLERANCIA_COR = 25           # Tolerância de 0 a 255. 5-10 é um bom valor para jogos.
-INTERVALO_BUSCA = 0.01        # Mais rápido que a busca por imagem (10 milissegundos)
+# COR_AZUL_SETA = (38, 0, 96) # DEEP FOREST
+# COR_AZUL_SETA = (55, 0, 101) # DESERTO
+# COR_AZUL_SETA = (74, 0, 188) # LUGARES EXTREMAMENTE CLARO
+TOLERANCIA_COR = 55           # Tolerância de 0 a 255. 5-10 é um bom valor para jogos.
+INTERVALO_BUSCA = 0.005        # Mais rápido que a busca por imagem (5 milissegundos)
 
 PixelCheck = namedtuple('PixelCheck', ['x', 'y', 'tecla'])
 
@@ -14,10 +18,10 @@ PixelCheck = namedtuple('PixelCheck', ['x', 'y', 'tecla'])
 # onde a cor azul aparece APENAS para aquela direção.
 CHECKPOINTS = [
     # Coordenada (X, Y) | Tecla a pressionar ('right', 'left', 'up', 'down')
-    PixelCheck(x=1011, y=550, tecla='right'), # Exemplo: Pixel para a Direita
-    PixelCheck(x=912, y=551, tecla='left'),  # Exemplo: Pixel para a Esquerda
-    PixelCheck(x=973, y=483, tecla='up'),    # Exemplo: Pixel para Cima
-    PixelCheck(x=945, y=584, tecla='down'),  # Exemplo: Pixel para Baixo
+    PixelCheck(x=1018, y=550, tecla='right'), # Exemplo: Pixel para a Direita
+    PixelCheck(x=900, y=551, tecla='left'),  # Exemplo: Pixel para a Esquerda
+    PixelCheck(x=973, y=479, tecla='up'),    # Exemplo: Pixel para Cima
+    PixelCheck(x=973, y=595, tecla='down'),  # Exemplo: Pixel para Baixo
 ]
 
 
