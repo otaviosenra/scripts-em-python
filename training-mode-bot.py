@@ -5,7 +5,8 @@ import time
 def bot_start():
     print("Bot QTE por Cor de Pixel Iniciado! Velocidade máxima.")
     pyautogui.FAILSAFE = True
-    
+    time.sleep(3.5)
+
     while True:
         pyautogui.press('z')
         time.sleep(3.5)
