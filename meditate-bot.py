@@ -2,13 +2,15 @@ import pyautogui
 import time
 from collections import namedtuple
 
-# Use o valor RGB exato que você encontrou na seta azul
+# Use o valor RGB exato que você encontrou na seta
+# COR_SETA = (187, 82, 0) # TREINO ATIVO FISICO
 
-COR_AZUL_SETA = (65, 0, 144) # Exemplo: Ajuste este valor!
-# COR_AZUL_SETA = (38, 0, 96) # DEEP FOREST
-# COR_AZUL_SETA = (55, 0, 101) # DESERTO
-# COR_AZUL_SETA = (74, 0, 188) # LUGARES EXTREMAMENTE CLARO
-TOLERANCIA_COR = 55           # Tolerância de 0 a 255. 5-10 é um bom valor para jogos.
+# COR_SETA = (65, 0, 144) # Exemplo: Ajuste este valor!
+# COR_SETA = (38, 0, 96) # DEEP FOREST
+# COR_SETA = (55, 0, 101) # DESERTO
+COR_SETA = (74, 0, 188) # LUGARES EXTREMAMENTE CLARO
+# COR_SETA = (0, 95, 188) # WATERFALL
+TOLERANCIA_COR = 20           # Tolerância de 0 a 255. 5-10 é um bom valor para jogos.
 INTERVALO_BUSCA = 0.005        # Mais rápido que a busca por imagem (5 milissegundos)
 
 PixelCheck = namedtuple('PixelCheck', ['x', 'y', 'tecla'])
@@ -33,9 +35,9 @@ def bot_qte_pixel_color():
         tecla_pressionada = False
         
         for check in CHECKPOINTS:
-            # Verifica se o pixel na coordenada (x, y) corresponde à COR_AZUL_SETA
+            # Verifica se o pixel na coordenada (x, y) corresponde à COR_SETA
             # dentro da tolerância definida.
-            if pyautogui.pixelMatchesColor(check.x, check.y, COR_AZUL_SETA, tolerance=TOLERANCIA_COR):
+            if pyautogui.pixelMatchesColor(check.x, check.y, COR_SETA, tolerance=TOLERANCIA_COR):
                 
                 print(f"Cor AZUL encontrada em ({check.x}, {check.y}). Pressionando: {check.tecla.upper()}")
                 pyautogui.press(check.tecla)
@@ -51,7 +53,7 @@ def bot_qte_pixel_color():
 
 if __name__ == "__main__":
     try:
-        print("\nINSTRUÇÃO: Ajuste COR_AZUL_SETA e as coordenadas (X, Y) em CHECKPOINTS.")
+        print("\nINSTRUÇÃO: Ajuste COR_SETA e as coordenadas (X, Y) em CHECKPOINTS.")
         bot_qte_pixel_color()
         
     except KeyboardInterrupt:

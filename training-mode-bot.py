@@ -9,7 +9,7 @@ def bot_start():
 
     while True:
         pyautogui.press('z')
-        time.sleep(3.5)
+        time.sleep(1.0)
         pyautogui.press('z')
 
         
