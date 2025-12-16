@@ -4,13 +4,14 @@ from collections import namedtuple
 
 # Use o valor RGB exato que você encontrou na seta
 # COR_SETA = (187, 82, 0) # TREINO ATIVO FISICO
+# COR_SETA = (114, 50, 0) # TREINO ATIVO FISICO ESCURO
 
 # COR_SETA = (65, 0, 144) # Exemplo: Ajuste este valor!
 # COR_SETA = (38, 0, 96) # DEEP FOREST
 # COR_SETA = (55, 0, 101) # DESERTO
-COR_SETA = (74, 0, 188) # LUGARES EXTREMAMENTE CLARO
-# COR_SETA = (0, 95, 188) # WATERFALL
-TOLERANCIA_COR = 20           # Tolerância de 0 a 255. 5-10 é um bom valor para jogos.
+# COR_SETA = (74, 0, 188) # LUGARES EXTREMAMENTE CLARO
+COR_SETA = (0, 95, 188) # WATERFALL
+TOLERANCIA_COR = 30          # Tolerância de 0 a 255. 5-10 é um bom valor para jogos.
 INTERVALO_BUSCA = 0.005        # Mais rápido que a busca por imagem (5 milissegundos)
 
 PixelCheck = namedtuple('PixelCheck', ['x', 'y', 'tecla'])
@@ -22,7 +23,7 @@ CHECKPOINTS = [
     # Coordenada (X, Y) | Tecla a pressionar ('right', 'left', 'up', 'down')
     PixelCheck(x=1018, y=550, tecla='right'), # Exemplo: Pixel para a Direita
     PixelCheck(x=900, y=551, tecla='left'),  # Exemplo: Pixel para a Esquerda
-    PixelCheck(x=973, y=479, tecla='up'),    # Exemplo: Pixel para Cima
+    PixelCheck(x=973, y=481, tecla='up'),    # Exemplo: Pixel para Cima
     PixelCheck(x=973, y=595, tecla='down'),  # Exemplo: Pixel para Baixo
 ]
 
