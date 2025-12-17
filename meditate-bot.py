@@ -9,9 +9,9 @@ from collections import namedtuple
 # COR_SETA = (65, 0, 144) # Exemplo: Ajuste este valor!
 # COR_SETA = (38, 0, 96) # DEEP FOREST
 # COR_SETA = (55, 0, 101) # DESERTO
-# COR_SETA = (74, 0, 188) # LUGARES EXTREMAMENTE CLARO
-COR_SETA = (0, 95, 188) # WATERFALL
-TOLERANCIA_COR = 30          # Tolerância de 0 a 255. 5-10 é um bom valor para jogos.
+COR_SETA = (74, 0, 188) # LUGARES EXTREMAMENTE CLARO
+# COR_SETA = (0, 95, 188) # WATERFALL
+TOLERANCIA_COR = 36          # Tolerância de 0 a 255. 5-10 é um bom valor para jogos.
 INTERVALO_BUSCA = 0.005        # Mais rápido que a busca por imagem (5 milissegundos)
 
 PixelCheck = namedtuple('PixelCheck', ['x', 'y', 'tecla'])
@@ -41,6 +41,7 @@ def bot_qte_pixel_color():
             if pyautogui.pixelMatchesColor(check.x, check.y, COR_SETA, tolerance=TOLERANCIA_COR):
                 
                 print(f"Cor AZUL encontrada em ({check.x}, {check.y}). Pressionando: {check.tecla.upper()}")
+                pyautogui.press(check.tecla)
                 pyautogui.press(check.tecla)
                 
                 tecla_pressionada = True
